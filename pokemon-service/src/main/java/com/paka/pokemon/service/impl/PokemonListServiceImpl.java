@@ -2,19 +2,16 @@ package com.paka.pokemon.service.impl;
 
 import com.paka.pokemon.adaptor.PokemonListAdaptor;
 import com.paka.pokemon.model.PokemonListResponse;
-import com.paka.pokemon.models.ApiException;
 import com.paka.pokemon.models.PokemonListQuery;
-import com.paka.pokemon.service.PokemonService;
+import com.paka.pokemon.service.PokemonListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-
 @Service
-public class PokemonServiceImpl implements PokemonService {
+public class PokemonListServiceImpl implements PokemonListService {
 
     private PokemonListAdaptor pokemonListAdaptor;
 

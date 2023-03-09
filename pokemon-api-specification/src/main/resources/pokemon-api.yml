@@ -43,6 +43,36 @@ paths:
                 $ref: '#/components/schemas/PokemonListResponse'
         "404":
           description: PokemonList not found
+  /pokemon/{name}:
+    get:
+      tags:
+        - PokemonDetail
+      summary: Find Pokemon by name
+      description: Find Pokemon by name
+      operationId: findByName
+      parameters:
+        - name: name
+          in: path
+          description: The name of the pokemon
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PokemonDetail'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              example:
+                code: REQUEST_VALIDATION_ERROR
+                error: There are some validation errors
+        404:
+          description: Pokemon not found
 components:
   schemas:
     PokemonListResponse:
@@ -63,3 +93,38 @@ components:
                 type: string
               url:
                 type: string
+    PokemonDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        sprites:
+          type: object
+          properties:
+            back_default:
+              type: string
+            back_shiny:
+              type: string
+            front_default:
+              type: string
+            front_shiny:
+              type: string
+        stats:
+          type: array
+          items:
+            type: object
+            properties:
+              base_stat:
+                type: string
+              effort:
+                type: string
+              stat:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  url:
+                    type: string
+
