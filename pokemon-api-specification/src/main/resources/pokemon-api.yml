@@ -1,0 +1,65 @@
+openapi: 3.0.1
+info:
+  title: Pokemon API
+  description: Pokemon API service for getting list of pokemons
+  version: 1.0.1
+  contact:
+    email: pkholofelo@gmail.com
+    name: Kholofelo Paka
+tags:
+  - name: Pokemon
+    description: List of pokemons
+  - name: PokemonDetail
+    description: Detailed description of pokemon
+paths:
+  /pokemon:
+    summary: /pokemon
+    description: No description available
+    get:
+      tags:
+        - Pokemon
+      summary: Return the list of pokemons.
+      description: Return the list of pokemons.
+      operationId: getPokemonList
+      parameters:
+        - name: limit
+          in: query
+          description: The limit we want on our results
+          required: true
+          schema:
+            type: string
+        - name: offset
+          in: query
+          description: The offset we want on our results
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: No description available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PokemonListResponse'
+        "404":
+          description: PokemonList not found
+components:
+  schemas:
+    PokemonListResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        previous:
+          type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              url:
+                type: string
