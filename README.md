@@ -1,1 +1,1 @@
-# pokemon-rest-api
+# Pokemon Rest API - Spring boot
