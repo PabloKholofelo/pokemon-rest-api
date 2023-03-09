@@ -1,9 +1,10 @@
 version: 0.2
 env:
-  LOGIN: TOKEN
-  HOST: https://sonarcloud.io/
-  Organization: paka-pk
-  Project: Paka
+  secrets-manager:
+    LOGIN: Sonar-LOGIN
+    HOST: Sonar-HOST
+    Organization: Sonar-Organization
+    Project: Sonar-Project
 phases:
   install:
     runtime-versions:
