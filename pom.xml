@@ -5,7 +5,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>pokemon-service</module>
-        <module>pokemon-data</module>
         <module>pokemon-api-specification</module>
     </modules>
     <parent>
