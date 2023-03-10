@@ -33,7 +33,8 @@ phases:
     commands:
       - echo Build completed on `date`
       - mvn package
+      - mv pokemon-service/target/pokemon-service-0.0.1-SNAPSHOT.jar pokemon-service.jar
 artifacts:
   files:
-    - pokemon-service/target/pokemon-service-0.0.1-SNAPSHOT.jar
+    - pokemon-service.jar
     - .ebextensions/**/*
